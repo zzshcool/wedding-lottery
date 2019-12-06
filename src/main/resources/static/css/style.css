@@ -13,11 +13,19 @@ body {
 }
 
 .sign {
-    padding-top: 40px;
+    padding-top: 5px;
     color: #8C55AA;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 25px;
+}
+
+.winner {
+    padding-top: 20px;
+    color: #1b17aa;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 .un {
@@ -75,21 +83,35 @@ form.form1 {
     border-radius: 5em;
     color: #fff;
     background: linear-gradient(to right, #9C27B0, #E040FB);
-    border: 0;
+    border: 2px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
     font-family: 'Ubuntu', sans-serif;
-    margin-left: 35%;
-    font-size: 13px;
+    margin-left: 30%;
+    font-size: 20px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+select {
+    margin-left: 25%;
+    margin-bottom: 8%;
+    width: 200px;
+    padding: 5px 5px 5px 5px;
+    font-size: 20px;
+    border: 1px solid #CCC;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(https://icon-library.net/images/select-icon-png/select-icon-png-7.jpg) 96% / 15% no-repeat #EEE;
 }
 
 .forgot {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #E1BEE7;
-    padding-top: 15px;
+    color: #cf4de7;
+    padding-top: 5px;
 }
 
 a {
@@ -103,3 +125,4 @@ a {
         border-radius: 0px;
     }
 }
+

@@ -16,7 +16,7 @@ public class WelcomeController {
 
     @GetMapping("/result")
     public String result(Model model) {
-
+        model.addAttribute("winner", 5566);
 
         return "result"; //view
     }

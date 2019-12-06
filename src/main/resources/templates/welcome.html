@@ -4,15 +4,24 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <title>抽獎首頁!</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <title>捧花抽獎首頁!</title>
 </head>
 
 <body>
 <div class="main">
-    <p class="sign" align="center">抽獎</p>
-    <form class="form1" method="get" action="/result">
-        <a class="submit" align="center">點我開獎</a>
+    <p class="sign" align="center">誰是幸運兒?!</p>
+    <p class="sign" align="center">祝您中獎</p>
+    <form id="myform" class="form1" method="get" action="/result">
+        <select name="name">
+            <option value="許羽珮">許羽珮</option>
+            <option value="丁子凡">丁子凡</option>
+            <option value="邱天惠">邱天惠</option>
+            <option value="林旅寧">林旅寧</option>
+            <option value="張瓊怡">張瓊怡</option>
+            <option value="陳珮榕">陳珮榕</option>
+        </select>
+        <a class="submit" align="center" onclick="document.getElementById('myform').submit()">點我開獎</a>
         <p class="forgot" align="center">點選按鈕立即開獎</p>
     </form>
 </div>
