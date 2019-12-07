@@ -21,6 +21,14 @@ body {
 }
 
 .winner {
+    padding-top: 10px;
+    color: #cf4de7;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.winner-title {
     padding-top: 20px;
     color: #1b17aa;
     font-family: 'Ubuntu', sans-serif;

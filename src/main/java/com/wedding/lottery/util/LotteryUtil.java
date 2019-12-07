@@ -4,6 +4,7 @@ import com.wedding.lottery.model.UserInfo;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -19,12 +20,19 @@ public class LotteryUtil {
         /***
          * 先過濾候選人投表者
          * 在從頭票者抽出來
-         *
          */
+        List<UserInfo> lotteryList = new ArrayList<>();
+        for (UserInfo u : list) {
+            if (u.getCandidate().equals(name))
+                lotteryList.add(u);
+        }
+
+        log.info("----------- lotteryList size = {} -------------", lotteryList.size());
+
         Random r = new Random();
         log.info(" list : {}", list);
-        int seed = r.nextInt(list.size());
-        return list.get(seed);
+        int seed = r.nextInt(lotteryList.size());
+        return lotteryList.get(seed);
     }
 
 }
