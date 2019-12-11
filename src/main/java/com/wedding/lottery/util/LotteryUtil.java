@@ -5,10 +5,14 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-
+/***
+ * 先過濾候選人投表者&重複投票者
+ * 在從頭票者抽出來
+ */
 @Slf4j
 public class LotteryUtil {
 
@@ -17,20 +21,22 @@ public class LotteryUtil {
 
     public static UserInfo getWinner(String name) {
 
-        /***
-         * 先過濾候選人投表者
-         * 在從頭票者抽出來
-         */
-        List<UserInfo> lotteryList = new ArrayList<>();
+        HashMap<String, UserInfo> map = new HashMap<>();
         for (UserInfo u : list) {
-            if (u.getCandidate().equals(name))
-                lotteryList.add(u);
+            if (u.getCandidate().equals(name)) {
+                map.put(u.getWinner(), u);
+            }
         }
+
+        List<UserInfo> lotteryList = new ArrayList<>();
+        map.forEach((k, v) -> {
+            lotteryList.add(v);
+        });
 
         log.info("----------- lotteryList size = {} -------------", lotteryList.size());
 
-        Random r = new Random();
-        log.info(" lotteryList : {}", lotteryList);
+        Random r = new Random(System.currentTimeMillis());
+        log.info(" lotteryList : {}", map);
         int seed = r.nextInt(lotteryList.size());
         return lotteryList.get(seed);
     }
