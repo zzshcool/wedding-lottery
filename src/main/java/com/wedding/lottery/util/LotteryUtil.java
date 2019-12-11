@@ -30,7 +30,7 @@ public class LotteryUtil {
         log.info("----------- lotteryList size = {} -------------", lotteryList.size());
 
         Random r = new Random();
-        log.info(" list : {}", list);
+        log.info(" lotteryList : {}", lotteryList);
         int seed = r.nextInt(lotteryList.size());
         return lotteryList.get(seed);
     }

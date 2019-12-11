@@ -8,12 +8,33 @@
     <title>恭喜中獎</title>
 </head>
 
-<body>
-<div class="main">
-    <p class="winner-title" align="center">中獎的是!!!!</p>
-    <p class="winner" align="center" th:text="${winner}"></p>
-    <div align="center"><img src="images/gift.png" height="200" width="200"/></div>
+<body onload="weddingLoading()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <div class="main-result">
+        <p class="winner-title" align="center">中獎的是!!!!</p>
+        <p class="winner" align="center" th:text="${winner}"></p>
+        <div align="center"><img src="images/gift.png" height="200" width="200"/></div>
+        <div align="center">
+            <button class="btn info" onclick="location.reload()">點我抽獎</button>
+        </div>
+    </div>
 </div>
+
+<script>
+    var myVar;
+
+    function weddingLoading() {
+        myVar = setTimeout(showPage, 3500);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
 </body>
 
 </html>
