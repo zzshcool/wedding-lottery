@@ -30,7 +30,7 @@ body {
 }
 
 .winner {
-    padding-top: 10px;
+    padding-top: 1px;
     color: #cf4de7;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
@@ -38,7 +38,7 @@ body {
 }
 
 .winner-title {
-    padding-top: 20px;
+    padding-top: 1px;
     color: #1b17aa;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;

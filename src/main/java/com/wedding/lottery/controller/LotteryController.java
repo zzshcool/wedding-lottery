@@ -23,7 +23,7 @@ public class LotteryController {
 
     @ApiOperation(value = "直接抽出幸運兒")
     @GetMapping("/lottery/winner")
-    public UserInfo getWinner(@RequestParam CandidateEnum name) {
+    public List<UserInfo> getWinner(@RequestParam CandidateEnum name) {
         return lotteryService.getWinner(name.getName());
     }
 

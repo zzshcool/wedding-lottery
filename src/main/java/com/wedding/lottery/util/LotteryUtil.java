@@ -19,7 +19,7 @@ public class LotteryUtil {
     @Setter
     private static List<UserInfo> list;
 
-    public static UserInfo getWinner(String name) {
+    public static List<UserInfo> getWinners(String name) {
 
         HashMap<String, UserInfo> map = new HashMap<>();
         for (UserInfo u : list) {
@@ -35,10 +35,23 @@ public class LotteryUtil {
 
         log.info("----------- lotteryList size = {} -------------", lotteryList.size());
 
-        Random r = new Random(System.currentTimeMillis());
-        log.info(" lotteryList : {}", map);
-        int seed = r.nextInt(lotteryList.size());
-        return lotteryList.get(seed);
+
+        List<UserInfo> winnerList = new ArrayList<>();
+        int size = 5;
+        if (lotteryList.size() < size) {
+            size = lotteryList.size();
+        }
+        for (int i = 0; i < size; i++) {
+            Random r = new Random(System.currentTimeMillis());
+            log.info(" lotteryList : {}", lotteryList);
+            int seed = r.nextInt(lotteryList.size());
+            winnerList.add(lotteryList.get(seed));
+            lotteryList.remove(winnerList.get(i));
+            log.info(" 再從籃子刪掉抽中的 ： {} ", lotteryList.size());
+        }
+
+
+        return winnerList;
     }
 
 }

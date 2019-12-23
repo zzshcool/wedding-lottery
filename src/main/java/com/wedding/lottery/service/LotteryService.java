@@ -7,8 +7,6 @@ import com.wedding.lottery.util.LotteryUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +15,10 @@ import java.util.List;
 public class LotteryService {
 
 
-    public UserInfo getWinner(String name) {
+    public List<UserInfo> getWinner(String name) {
         List<UserInfo> userList = GoogleSheetsService.getUserList();
         LotteryUtil.setList(userList);
-        UserInfo winner = LotteryUtil.getWinner(name);
-        log.info(" 中獎者的是 : {}", winner);
+        List<UserInfo> winner = LotteryUtil.getWinners(name);
         return winner;
     }
 

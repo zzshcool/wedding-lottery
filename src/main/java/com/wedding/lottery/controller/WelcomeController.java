@@ -21,7 +21,7 @@ public class WelcomeController {
 
     @GetMapping("/result")
     public String result(Model model, @RequestParam String name) {
-        model.addAttribute("winner", lotteryService.getWinner(name).getWinner());
+        model.addAttribute("winners", lotteryService.getWinner(name));
         return "result"; //view
     }
 }
